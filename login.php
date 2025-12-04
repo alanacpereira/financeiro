@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'mensagens.php';
 
 //Verificar se o usuário está logado
 if (isset ($_SESSION['usuario_id'])) {
@@ -15,9 +16,14 @@ if (isset ($_SESSION['usuario_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema Financeiro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Login - Sistema Financeiro</h1>
+
+    <?php exiibir_mensagem(); ?>
+
     <form action="autenticar.php" method="post">
         <div>
             <label for="email">E-mail:</label>
