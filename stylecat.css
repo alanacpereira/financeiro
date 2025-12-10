@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    background-image: url(car.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ret {
+    background-color: brown;
+    width: 1263px;
+    height: 250px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

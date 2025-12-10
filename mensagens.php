@@ -6,7 +6,7 @@ function set_mensagem($mensagem, $tipo) {
 }
 
 //Função para exibir a mensagem
-function exiibir_mensagem() {
+function exibir_mensagem() {
     if (isset($_SESSION['mensagem'])) {
         $mensagem = $_SESSION['mensagem'];
         $tipo = $_SESSION['mensagem_tipo'];

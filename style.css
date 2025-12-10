@@ -1,59 +1,90 @@
 body {
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    background-image: url(ajd.jpg);
+    font-family: sans-serif;
+    background-image: url(car.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     margin: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
+/* meu botão de entrar */
 button {
-    color: white;
-    padding: 12px 35px;
-    margin: 12px 0;
-    text-decoration: none;
-    border-radius: 12px;
+    padding: 12px;
     border: none;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-    background: linear-gradient(to bottom, #ff69b4, #ff1493);
+    transition: 0.2s;
+    background: #ce211e;
     cursor: pointer;
+    width: 100%;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-/* Quando o cursor passar em cima irá fazer a transição */
+/* Quando o cursor passar em cima irá fazer a transição da cor*/
 button:hover {
-    background: linear-gradient(to bottom, #ff85c1, #ff1a9b);
-    transform: translateY(-2px);
+    background: #8b0606;
 }
 
-h1 {
-    color: rgb(255, 0, 200);
-    font-size: 45px;
-    font-weight: 700px;
+/* Título */
+.titulo {
+    color: #ff1a1a;
+    font-size: 32px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 10px black;
 }
+
 
 label {
-    font-size: 18px;
-    font-weight: 600px;
-    color: fff;
-    /* sombra */
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+    color: white;
 }
+
 
 /* Para estilizar o cadastre-se, puxei o a do ahref */
 a {
-    color: #ff00cc;
+    color: #ff0000;
     font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
-    color:#da0086;
-    text-shadow: 0 0 8px #da0086;
+    text-decoration: underline;
 }
+
+/* Parte do cadastro */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* fiz um container para ficar um quadro, e facilitar a estilização */
+.container-login {
+    width: 420px;
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.cadastro-texto {
+    text-align: center;
+    color: white;
+}
+
+/* Finalizei a página de login */
