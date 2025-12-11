@@ -6,7 +6,6 @@ body {
     background-position: center;
     min-height: 100vh;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.473);
     color: white;
 }
 
@@ -27,7 +26,10 @@ h2 {
 }
 
 h3 {
-    color: #E10600;
+    color: #ea0800;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
 }
 
 .sair {
@@ -48,6 +50,8 @@ div>p {
     text-shadow: 2px 2px 5px black;
 }
 
+
+/* Parte do dashboard/categorias/transaçoes */
 nav ul {
     list-style: none;
     padding: 0;
@@ -69,39 +73,42 @@ nav ul li a {
 }
 
 nav ul li a {
-    background-color: #E10600;
+    background-color: #a10702;
 }
 
 /* Quadrados transparentes */
 .ret>div {
-    background: rgba(37, 3, 3, 0.194);
+    background: rgba(18, 1, 1, 0.331);
     margin: 10px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 120px;
     gap: 0;
     margin-top: 40px;
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
-    border-left: 6px solid #E10600;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border-left: 7px solid #7f0400;
+    font-weight: bold;
 }
 
 .ret {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 
 /* estilizanção dos quadrados */
 div>div p {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 4px 4px 8px black;
     color: #FFD100;
 }
+
+
 
 /* Tabela */
 table {
@@ -116,7 +123,7 @@ table {
 }
 
 thead {
-    background: #E10600;
+    background: #a80600;
 }
 
 /* Tabela tamanho*/
@@ -127,9 +134,61 @@ table td {
 }
 
 a {
-    color: #FFD100;
+    color: #ffee00;
+    font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Quadrados  */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background-color: none;
+    border-radius: 12px;
+    flex-direction: row;
+}
+
+.qua {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 90px;
+    border-radius: 12px;
+    width: 220px;
+    height: 130px;
+    color: white;
+    font-weight: bold;
+}
+
+.quad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 90px;
+    border-radius: 12px;
+    width: 220px;
+    height: 130px;
+    color: white;
+    font-weight: bold;
+}
+
+.quadr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 90px;
+    border-radius: 12px;
+    width: 220px;
+    height: 130px;
+    color: white;
+    font-weight: bold;
 }
