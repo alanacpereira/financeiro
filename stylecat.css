@@ -4,19 +4,132 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+}
+
+/* Meu título */
+h1 {
+    text-align: center;
+    font-family: 36px;
+    margin-top: 20px;
+    color: #FFD100;
+    text-shadow: 3px 3px 8px black;
+}
+
+/* Todos os H trocam a cor dos títulos e subtítulos */
+h2 {
+    color: #FFD100;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px black;
+}
+
+h3 {
+    color: #E10600;
+}
+
+.sair {
+    color: #E10600;
+    font-weight: bold;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.sair:hover {
+    text-decoration: underline;
+}
+
+/* estiliza um depois o outro, pois uso o > */
+div>p {
+    font-size: 18px;
+    margin-left: 20px;
+    text-shadow: 2px 2px 5px black;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    width: 220px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
+    transition: 0.3s;
+}
+
+nav ul li a {
+    background-color: #E10600;
+}
+
+/* Quadrados transparentes */
+.ret>div {
+    background: rgba(37, 3, 3, 0.194);
+    margin: 10px 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    gap: 0;
+    margin-top: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    border-left: 6px solid #E10600;
 }
 
 .ret {
-    background-color: brown;
-    width: 1263px;
-    height: 250px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-h1 {
-    text-align: center;
+
+/* estilizanção dos quadrados */
+div>div p {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
+    color: #FFD100;
+}
+
+/* Tabela */
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+
+thead {
+    background: #E10600;
+}
+
+/* Tabela tamanho*/
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+}
+
+a {
+    color: #FFD100;
+}
+
+a:hover {
+    text-decoration: underline;
 }

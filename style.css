@@ -87,4 +87,9 @@ input {
     color: white;
 }
 
+.mensagem-erro {
+    color: #8b0606;
+    font-weight: bold;
+}
+
 /* Finalizei a página de login */

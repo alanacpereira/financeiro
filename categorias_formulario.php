@@ -41,6 +41,7 @@ if ($id_categoria) {
     <title>Categorias - Sistema Financeiro</title>
 </head>
 <body>
+    
     <h1>Sistema Financeiro</h1>
 
     <div>
