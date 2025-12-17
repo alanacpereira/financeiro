@@ -18,5 +18,6 @@ try {
 //Iniciar sessão se ainda não foi iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+    
 }
 ?>
