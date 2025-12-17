@@ -75,13 +75,13 @@ $categorias = $stmt->fetchAll();
         <h2>Categorias</h2>
 
         <div>
-            <a class="btn btn-primary" href="categorias_formulario.php">Nova Categoria</a>
+            <a class="cat" href="categorias_formulario.php">Nova Categoria</a>
         </div>
 
         <?php if (count($categorias) > 0): ?>
             <table class="table">
                 <thead>
-                    <tr class="tabe">
+                    <tr>
                         <th>Nome</th>
                         <th>Tipo</th>
                         <th>Ações</th>
