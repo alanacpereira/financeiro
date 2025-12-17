@@ -2,7 +2,7 @@
 require_once 'config.php';
 require_once 'mensagens.php';
 
-//Verificar se o usuário está logado
+// Verificar se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario_id'])) {
 $usuario_id = $_SESSION['usuario_id'];
 $usuario_nome = $_SESSION['usuario_nome'];
 
-//Buscar Resumo Financeiro
+// Buscar Resumo Financeiro
 $sql_receitas = "SELECT SUM(valor) as total FROM transacao 
                  WHERE id_usuario = :usuario_id AND tipo = 'receita'";
 $stmt_receitas = $conn->prepare($sql_receitas);
@@ -43,94 +43,113 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Financeiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylecat.css">
 </head>
 
 <body>
-        <h1>Sistema Financeiro</h1>
 
-        <!-- <?php include 'navbar.php'; ?> -->
+<h1>Sistema Financeiro</h1>
 
-        <div class=for>
-        <div>
-            <p classe="user">Bem-Vindo, <strong> <?php echo $usuario_nome ?></strong></p>
-            <a class="sair" href="logout.php">Sair</a>
-        </div>
+<header class="topbar">
+    <div class="user-area">
+        <p class="user">Bem-vindo, <strong><?= htmlspecialchars($usuario_nome) ?></strong></p>
+        <a class="sair" href="logout.php">Sair</a>
+    </div>
+</header>
 
-        <?php exibir_mensagem(); ?>
+<?php exibir_mensagem(); ?>
 
-        <nav>
-            <ul class="menu">
-                <li class="qua"><a href="index.php">📊Dashboard</a></li>
-                <li class="quad"><a href="categorias_listar.php">📁Categorias</a></li>
-                <li class="quadr"><a href="transacoes_listar.php">💸Transações</a></li>
-            </ul>
-        </nav>
-        </div>
+<!-- HERO / MENU SUPERIOR -->
+<section class="hero-area">
+    <nav class="menu-wrapper">
+        <ul class="menu menu-wide">
+            <li class="menu-item menu-card">
+                <a href="index.php">
+                    <span class="icon">📊</span>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
 
-        <h2>Resumo Financeiro</h2>
+            <li class="menu-item menu-card">
+                <a href="categorias_listar.php">
+                    <span class="icon">📁</span>
+                    <span class="text">Categorias</span>
+                </a>
+            </li>
 
-        <div class="ret">
-        <div>
+            <li class="menu-item menu-card">
+                <a href="transacoes_listar.php">
+                    <span class="icon">💸</span>
+                    <span class="text">Transações</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<main class="container">
+
+    <h2>Resumo Financeiro</h2>
+
+    <div class="ret">
+        <div class="card-resumo">
             <div>
                 <h3>Receitas</h3>
-                <p>R$ <?php echo number_format($total_receitas, 2, ',', '.') ?></p>
+                <p>R$ <?= number_format($total_receitas, 2, ',', '.') ?></p>
             </div>
         </div>
 
-        <div>
+        <div class="card-resumo">
             <div>
                 <h3>Despesas</h3>
-                <p>R$ <?php echo number_format($total_despesas, 2, ',', '.') ?></p>
+                <p>R$ <?= number_format($total_despesas, 2, ',', '.') ?></p>
             </div>
         </div>
 
-        <div>
+        <div class="card-resumo">
             <div>
                 <h3>Saldo</h3>
-                <p>R$ <?php echo number_format($saldo, 2, ',', '.') ?></p>
+                <p>R$ <?= number_format($saldo, 2, ',', '.') ?></p>
             </div>
         </div>
-        </div>
+    </div>
 
-        <h2>Últimas Transações</h2>
+    <h2>Últimas Transações</h2>
 
-        <?php if (count($ultimas_transacoes) > 0): ?>
-            <table border="1">
-                <thead>
+    <?php if ($ultimas_transacoes): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($ultimas_transacoes as $t): ?>
                     <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Tipo</th>
-                        <th>Valor</th>
+                        <td><?= date('d/m/Y', strtotime($t['data_transacao'])) ?></td>
+                        <td><?= htmlspecialchars($t['descricao']) ?></td>
+                        <td><?= htmlspecialchars($t['categoria_nome'] ?? 'Sem categoria') ?></td>
+                        <td><?= ucfirst($t['tipo']) ?></td>
+                        <td>R$ <?= number_format($t['valor'], 2, ',', '.') ?></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($ultimas_transacoes as $transacao): ?>
-                        <tr>
-                            <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
-                            <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
-                            <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
-                            <td><?php echo ucfirst($transacao['tipo']); ?></td>
-                            <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-            <p><a href="transacoes_listar.php">Ver todas as transações</a></p>
-        <?php else: ?>
-            <p>Nenhuma transação cadastrada ainda.</p>
-            <p><a href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
-        <?php endif; ?>
-   
+        <p><a href="transacoes_listar.php">Ver todas as transações</a></p>
+    <?php else: ?>
+        <p>Nenhuma transação cadastrada.</p>
+    <?php endif; ?>
+
+</main>
 
 </body>
-
 </html>

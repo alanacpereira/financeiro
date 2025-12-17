@@ -1,41 +1,57 @@
+/* =========================
+   BASE
+========================= */
 body {
-    font-family: sans-serif;
-    background-image: url(car.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 100vh;
     margin: 0;
+    font-family: sans-serif;
+    background: url(car.jpeg) center/cover no-repeat;
     color: white;
+    min-height: 100vh;
 }
 
-/* Meu título */
+/* =========================
+   TÍTULOS
+========================= */
 h1 {
     text-align: center;
-    font-family: 36px;
     margin-top: 20px;
     color: #FFD100;
     text-shadow: 3px 3px 8px black;
+    font-size: 40px;
 }
 
-/* Todos os H trocam a cor dos títulos e subtítulos */
 h2 {
     color: #FFD100;
-    margin-top: 20px;
+    margin-top: 30px;
     text-shadow: 2px 2px 5px black;
 }
 
 h3 {
     color: #ea0800;
-    font-weight: bold;
     text-align: center;
-    font-weight: bold;
+}
+
+/* =========================
+   TOPO
+========================= */
+.topbar {
+    padding: 10px 20px;
+}
+
+.user-area {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.user {
+    font-size: 20px;
+    margin: 0;
 }
 
 .sair {
     color: #E10600;
     font-weight: bold;
-    margin-left: 20px;
     text-decoration: none;
 }
 
@@ -43,152 +59,138 @@ h3 {
     text-decoration: underline;
 }
 
-/* estiliza um depois o outro, pois uso o > */
-div>p {
-    font-size: 18px;
-    margin-left: 20px;
-    text-shadow: 2px 2px 5px black;
-}
-
-
-/* Parte do dashboard/categorias/transaçoes */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-    width: 220px;
-    border-radius: 10px;
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.4);
-}
-
-nav ul li a {
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
-    transition: 0.3s;
-}
-
-nav ul li a {
-    background-color: #a10702;
-}
-
-/* Quadrados transparentes */
-.ret>div {
-    background: rgba(18, 1, 1, 0.331);
-    margin: 10px 20px;
+/* =========================
+   HERO / MENU
+========================= */
+.hero-area {
+    width: 100%;
+    min-height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 120px;
-    gap: 0;
-    margin-top: 40px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    border-left: 7px solid #7f0400;
-    font-weight: bold;
 }
 
+.menu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu.menu-wide {
+    width: min(1100px, 92vw);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cards do menu */
+.menu-card {
+    height: 130px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    border-left: 7px solid #7f0400;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+    transition: 0.25s ease;
+}
+
+.menu-card a {
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.menu-card .icon {
+    font-size: 38px;
+}
+
+.menu-card .text {
+    font-size: 20px;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    background: rgba(161, 7, 2, 0.85);
+}
+
+/* =========================
+   RESUMO FINANCEIRO
+========================= */
 .ret {
     display: flex;
     justify-content: center;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
+.card-resumo {
+    width: 400px;
+    height: 120px;
+    background: rgba(18, 1, 1, 0.33);
+    backdrop-filter: blur(6px);
+    border-left: 7px solid #7f0400;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* estilizanção dos quadrados */
-div>div p {
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 4px 4px 8px black;
+.card-resumo p {
     color: #FFD100;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-
-
-/* Tabela */
+/* =========================
+   TABELA
+========================= */
 table {
     width: 95%;
     margin: 20px auto;
     border-collapse: collapse;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0,0,0,0.5);
     border-radius: 14px;
     overflow: hidden;
-    backdrop-filter: blur(4px);
+    text-align: center;
+    font-weight: bold;
 }
 
 thead {
     background: #a80600;
 }
 
-/* Tabela tamanho*/
-table th,
-table td {
+th, td {
     padding: 12px;
-    text-align: left;
 }
 
 a {
     color: #ffee00;
-    font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
-}
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 900px) {
+    .menu.menu-wide {
+        grid-template-columns: 1fr;
+        width: 92vw;
+    }
 
-/* Quadrados  */
+    .card-resumo {
+        width: 90%;
+    }
 
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    background-color: none;
-    border-radius: 12px;
-    flex-direction: row;
-}
-
-.qua {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 90px;
-    border-radius: 12px;
-    width: 220px;
-    height: 130px;
-    color: white;
-    font-weight: bold;
-}
-
-.quad {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 90px;
-    border-radius: 12px;
-    width: 220px;
-    height: 130px;
-    color: white;
-    font-weight: bold;
-}
-
-.quadr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 90px;
-    border-radius: 12px;
-    width: 220px;
-    height: 130px;
-    color: white;
-    font-weight: bold;
+    .user-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
