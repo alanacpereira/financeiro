@@ -124,5 +124,6 @@ $categorias = $stmt_categorias->fetchAll();
             </div>
         </form>
     <?php endif; ?>
+    
 </body>
 </html>
