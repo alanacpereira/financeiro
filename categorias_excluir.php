@@ -40,4 +40,5 @@ if ($id_categoria) {
 
 header('Location: categorias_listar.php');
 exit;
+
 ?>
