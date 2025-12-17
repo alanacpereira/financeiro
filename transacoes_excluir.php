@@ -40,4 +40,5 @@ if ($id_transacao) {
 
 header('Location: transacoes_listar.php');
 exit;
+
 ?>
