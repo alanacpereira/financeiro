@@ -150,6 +150,5 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
     <?php endif; ?>
 
 </main>
-
 </body>
 </html>
