@@ -127,6 +127,14 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+.centro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .form-container label {
     display: block;
     margin-bottom: 5px;

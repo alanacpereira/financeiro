@@ -27,32 +27,50 @@ $categorias = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias - Sistema Financeiro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="stylelistar.css">
 </head>
 
 
 <body>
-    <?php include'navbar.php'; ?>
-
     <div class="container">
 
         <h1>Sistema Financeiro</h1>
 
-        <div>
-            <p>Bem-Vindo, <strong> <?php echo $usuario_nome ?></strong></p>
-            <a href="logout.php">Sair</a>
-        </div>
-
+        <header class="topbar">
+            <div class="user-area">
+                <p class="user">Bem-vindo, <strong><?= htmlspecialchars($usuario_nome) ?></strong></p>
+                <a class="sair" href="logout.php">Sair</a>
+            </div>
+        </header>
+        
         <?php exibir_mensagem(); ?>
 
-        <nav>
-            <ul>
-                <li><a href="index.php">Dashboard</a></li>
-                <li><a href="categorias_listar.php">Categorias</a></li>
-                <li><a href="transacoes_listar.php">Transações</a></li>
-            </ul>
-        </nav>
+        <!-- MENU -->
+        <section class="hero-area">
+            <nav class="menu-wrapper">
+                <ul class="menu menu-wide">
+                    <li class="menu-item menu-card">
+                        <a href="index.php">
+                            <span class="icon">📊</span>
+                            <span class="text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item menu-card">
+                        <a href="categorias_listar.php">
+                            <span class="icon">📁</span>
+                            <span class="text">Categorias</span>
+                        </a>
+                    </li>
+                    <li class="menu-item menu-card">
+                        <a href="transacoes_listar.php">
+                            <span class="icon">💸</span>
+                            <span class="text">Transações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
 
         <h2>Categorias</h2>
 
@@ -63,7 +81,7 @@ $categorias = $stmt->fetchAll();
         <?php if (count($categorias) > 0): ?>
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="tabe">
                         <th>Nome</th>
                         <th>Tipo</th>
                         <th>Ações</th>
