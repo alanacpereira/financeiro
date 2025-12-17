@@ -63,5 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     header('Location: categorias_listar.php');
     exit;
+    
 }
 ?>
