@@ -49,37 +49,63 @@ $categorias = $stmt_categorias->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transações - Sistema Financeiro</title>
+    <link rel="stylesheet" href="styletranlistar.css">
 </head>
+
 <body>
     <h1>Sistema Financeiro Pessoal</h1>
-    
-    <div>
-        <p>Bem-vindo, <strong><?php echo htmlspecialchars($usuario_nome); ?></strong></p>
-        <a href="logout.php">Sair</a>
-    </div>
-    
+
+    <header class="topbar">
+        <div class="user-area">
+            <p class="user">Bem-vindo, <strong><?= htmlspecialchars($usuario_nome) ?></strong></p>
+            <a class="sair" href="logout.php">Sair</a>
+        </div>
+    </header>
+
     <?php exibir_mensagem(); ?>
-    
-    <nav>
-        <ul>
-            <li><a href="index.php">Dashboard</a></li>
-            <li><a href="categorias_listar.php">Categorias</a></li>
-            <li><a href="transacoes_listar.php">Transações</a></li>
-        </ul>
-    </nav>
-    
+
+    <!-- HERO / MENU SUPERIOR -->
+    <section class="hero-area">
+        <nav class="menu-wrapper">
+            <ul class="menu menu-wide">
+                <li class="menu-item menu-card">
+                    <a href="index.php">
+                        <span class="icon">📊</span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item menu-card">
+                    <a href="categorias_listar.php">
+                        <span class="icon">📁</span>
+                        <span class="text">Categorias</span>
+                    </a>
+                </li>
+
+                <li class="menu-item menu-card">
+                    <a href="transacoes_listar.php">
+                        <span class="icon">💸</span>
+                        <span class="text">Transações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+
     <h2>Transações</h2>
-    
+
     <div>
-        <a href="transacoes_formulario.php">Nova Transação</a>
+        <a href="transacoes_formulario.php" class="nov">Nova Transação</a>
     </div>
-    
+
     <h3>Filtros</h3>
-    <form method="GET" action="transacoes_listar.php">
+    <form method="GET" action="transacoes_listar.php" class="form-container">
         <div>
             <label for="tipo">Tipo:</label>
             <select id="tipo" name="tipo">
@@ -88,28 +114,28 @@ $categorias = $stmt_categorias->fetchAll();
                 <option value="despesa" <?php echo $filtro_tipo === 'despesa' ? 'selected' : ''; ?>>Despesa</option>
             </select>
         </div>
-        
+
         <div>
             <label for="categoria">Categoria:</label>
             <select id="categoria" name="categoria">
                 <option value="">Todas</option>
                 <?php foreach ($categorias as $categoria): ?>
-                    <option value="<?php echo $categoria['id_categoria']; ?>" 
-                            <?php echo $filtro_categoria == $categoria['id_categoria'] ? 'selected' : ''; ?>>
+                    <option value="<?php echo $categoria['id_categoria']; ?>"
+                        <?php echo $filtro_categoria == $categoria['id_categoria'] ? 'selected' : ''; ?>>
                         <?php echo htmlspecialchars($categoria['nome']); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
         </div>
         
-        <div>
-            <button type="submit">Filtrar</button>
-            <a href="transacoes_listar.php">Limpar Filtros</a>
+        <div class="filtro">
+            <button>Filtrar</button>
+            <a href="transacoes_listar.php" class="limpar">Limpar Filtros</a>
         </div>
     </form>
-    
+
     <?php if (count($transacoes) > 0): ?>
-        <table border="1">
+        <table border="1" class="table">
             <thead>
                 <tr>
                     <th>Data</th>
@@ -130,8 +156,8 @@ $categorias = $stmt_categorias->fetchAll();
                         <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
                         <td>
                             <a href="transacoes_formulario.php?id=<?php echo $transacao['id_transacao']; ?>">Editar</a>
-                            <a href="transacoes_excluir.php?id=<?php echo $transacao['id_transacao']; ?>" 
-                               onclick="return confirm('Tem certeza que deseja excluir esta transação?');">Excluir</a>
+                            <a href="transacoes_excluir.php?id=<?php echo $transacao['id_transacao']; ?>"
+                                onclick="return confirm('Tem certeza que deseja excluir esta transação?');">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -141,4 +167,5 @@ $categorias = $stmt_categorias->fetchAll();
         <p>Nenhuma transação encontrada.</p>
     <?php endif; ?>
 </body>
+
 </html>

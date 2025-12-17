@@ -1,0 +1,252 @@
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: url(car.jpeg) center/cover no-repeat;
+    color: white;
+    min-height: 100vh;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #FFD100;
+    text-shadow: 3px 3px 8px black;
+    font-size: 40px;
+}
+
+.titulo-form {
+    text-align: center;
+    color: #FFD100;
+    margin-top: 20px;
+    text-shadow: 2px 2px 6px black;
+}
+
+h2 {
+    color: #FFD100;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+h3 {
+    text-align: center;
+    color: #FFD100 ;
+    font-size: 190%;
+    text-shadow: 2px 2px 6px black;
+}
+
+.nov {
+    text-decoration: none;
+    background: #E10600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ===============
+Filtros 
+=============== */
+.filtro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.filtro button {
+    margin-top: 0;
+    background: #E10600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.limpar {
+    color: #ffee00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.limpar:hover {
+    text-decoration: none;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+.topbar {
+    padding: 10px 20px;
+}
+
+.user-area {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.user {
+    font-size: 20px;
+    margin: 0;
+    color: #FFD100;
+}
+
+.sair {
+    color: #E10600;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sair:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MENU
+========================= */
+.hero-area {
+    width: 100%;
+    min-height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu.menu-wide {
+    width: min(1100px, 92vw);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-card {
+    height: 130px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    border-left: 7px solid #7f0400;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    transition: 0.25s ease;
+}
+
+.menu-card a {
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    background: rgba(161, 7, 2, 0.85);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.tabe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 360px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    justify-content: center;
+}
+
+/* ==========================
+   TABELA
+========================== */
+.table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    text-align: center;
+}
+
+.table thead {
+    background: #a80600;
+    text-align: center;
+}
+
+.table th {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Corpo */
+.table td {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+/* Hover na linha */
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+a {
+    color: #ffee00;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+}
