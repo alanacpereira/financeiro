@@ -19,5 +19,6 @@ function exibir_mensagem() {
         unset($_SESSION['mensagem']);
         unset($_SESSION['mensagem_tipo']);
     }
+    
 }
 ?>
