@@ -127,7 +127,7 @@ $categorias = $stmt_categorias->fetchAll();
                 <?php endforeach; ?>
             </select>
         </div>
-        
+
         <div class="filtro">
             <button>Filtrar</button>
             <a href="transacoes_listar.php" class="limpar">Limpar Filtros</a>
@@ -166,6 +166,7 @@ $categorias = $stmt_categorias->fetchAll();
     <?php else: ?>
         <p>Nenhuma transação encontrada.</p>
     <?php endif; ?>
+    
 </body>
 
 </html>
