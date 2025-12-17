@@ -116,6 +116,6 @@ if ($id_categoria) {
             <a href="categorias_listar.php" class="btn-cancelar">Cancelar</a>
         </div>
     </form>
+    
 </body>
-
 </html>
