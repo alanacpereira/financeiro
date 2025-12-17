@@ -48,5 +48,6 @@ if (isset($_SESSION['usuario_id'])) {
     </form>
     
     <p>Já tem conta? <a href="login.php">Faça login aqui</a></p>
+    
 </body>
 </html>
