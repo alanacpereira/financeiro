@@ -176,6 +176,42 @@ a {
     color: #ffee00;
 }
 
+/* Card do formulário */
+.form-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 360px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Título */
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 26px;
+}
+
+/* Labels */
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Inputs e select */
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
 /* =========================
    RESPONSIVO
 ========================= */
